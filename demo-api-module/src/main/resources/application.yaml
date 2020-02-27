@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:tcp://localhost:8082/./multi-module
+      username: sa
+      password:
+      driver-class-name: org.h2.Driver
+
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate.format_sql: true
+      hibernate.use_sql_comments: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
