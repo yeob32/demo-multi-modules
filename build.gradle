@@ -48,8 +48,8 @@ project(':demo-api-module') {
     }
 }
 
-//project(':sample-admin') {
-//    dependencies {
-//        compile project(':sample-common')
-//    }
-//}
+project(':event-publisher') {
+    dependencies {
+        compile project(':demo-common-module')
+    }
+}
