@@ -1,10 +1,10 @@
-package com.example.event;
+package com.example.demodbmodule;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EventPublisherApplicationTests {
+class DemoDbModuleApplicationTests {
 
     @Test
     void contextLoads() {

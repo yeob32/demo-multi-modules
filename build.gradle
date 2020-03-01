@@ -1,21 +1,21 @@
-//buildscript {
-//    ext {
-//        springBootVersion = '2.2.4.RELEASE'
-//    }
-//    repositories {
-//        mavenCentral()
-//    }
-//    dependencies {
-//        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-//        classpath "io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE"
-//    }
-//}
-
-plugins {
-    id 'org.springframework.boot' version '2.2.4.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-    id 'java'
+buildscript {
+    ext {
+        springBootVersion = '2.2.4.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE"
+    }
 }
+
+//plugins {
+//    id 'org.springframework.boot' version '2.2.4.RELEASE'
+//    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+//    id 'java'
+//}
 
 allprojects {
     group 'com.example'
@@ -42,14 +42,22 @@ subprojects {
     }
 }
 
+project(':demo-event-publisher-module') {
+    dependencies {
+        compile project(':demo-common-module')
+    }
+}
+
 project(':demo-api-module') {
     dependencies {
         compile project(':demo-common-module')
     }
 }
 
-project(':event-publisher') {
+project(':demo-db-module') {
     dependencies {
         compile project(':demo-common-module')
     }
 }
+
+
